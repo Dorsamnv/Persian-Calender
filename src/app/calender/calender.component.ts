@@ -131,4 +131,8 @@ endYear: any;
   getEnglishDate(): string {
     return moment().locale('en').format('dddd, MMMM D, YYYY');
   }
+
+  getPersianDate(): string {
+    return moment().locale('fa').format('dddd، D MMMM YYYY');
+  }
 }

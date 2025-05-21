@@ -42,7 +42,7 @@
   <div class="calendar-footer">
     <div class="today-info">
       <div class="today-jalali">
-        {{ weekdays[moment().day()] }} {{ toPersianNumber(moment().jDate()) }} {{ months[moment().jMonth()] }}
+        {{ moment().locale('fa').format('dddd') }} {{ toPersianNumber(moment().jDate()) }} {{ months[moment().jMonth()] }}
       </div>
       <div class="today-gregorian">
         {{ getEnglishDate() }}
