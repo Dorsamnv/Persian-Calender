@@ -1,0 +1,234 @@
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/dist/font-face.css');
+
+* {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.calendar-container {
+  max-width: 550px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  direction: rtl;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.calendar-container:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-header {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #1a512b 0%, #2d7d46 100%);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.selectors {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.selector-wrapper {
+  display: flex;
+}
+
+.month-select,
+.year-select {
+  min-width: 120px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.month-select:hover,
+.year-select:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+::ng-deep .mat-mdc-select-value {
+  color: white !important;
+}
+
+::ng-deep .mat-mdc-select-arrow {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+::ng-deep .mat-mdc-select-panel {
+  background-color: white !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+::ng-deep .mat-mdc-option {
+  color: #2c3e50 !important;
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+::ng-deep .mat-mdc-option:hover:not(.mat-mdc-option-disabled) {
+  background-color: rgba(26, 81, 43, 0.1) !important;
+}
+
+::ng-deep .mat-mdc-option.mat-mdc-selected {
+  background-color: rgba(26, 81, 43, 0.2) !important;
+  color: #1a512b !important;
+}
+
+::ng-deep .mat-mdc-select-value-text {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #395d45;
+}
+
+.calendar-body {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.day:not(.empty):hover {
+  background: #e3f2fd;
+  transform: scale(1.05);
+}
+
+.day-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  padding: px;
+}
+
+.j-date {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.g-date {
+  font-size: 0.8rem;
+  color: #95a5a6;
+}
+
+.h-date {
+  font-size: 0.8rem;
+  color: #8e44ad;
+  font-weight: 600;
+}
+
+.today {
+  background-color: #1a512b;
+  border-radius: 12px;
+}
+
+.today .j-date {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.empty {
+  cursor: default;
+}
+
+.calendar-footer {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #eee;
+  background: #c2c2c2;
+  border-radius: 0 0 20px 20px;
+}
+
+.today-info {
+  text-align: center;
+}
+
+.today-gregorian {
+  font-size: 1rem;
+  color: #424848;
+}
+
+@media (max-width: 600px) {
+  .calendar-container {
+    max-width: 100%;
+    margin: 10px;
+    box-shadow: none;
+  }
+
+  .selectors {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .month-select,
+  .year-select {
+    min-width: 100%;
+  }
+
+  .calendar-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .weekdays {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .days {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
